@@ -12,27 +12,39 @@
 </head>
 <body> 
     <div class="row mb-0 full-height">
-        <div class="col s1 blue darken-4 navside full-height" >
+        <div class="col s1 blue darken-4 navside vertical full-height" >
                 <ul id="slide-out" class="side-nav fixed">
-                    <li><a href="sass.html">A</a></li>
-                    <li><a href="badges.html">B</a></li>
-                    <li><a href="collapsible.html">C</a></li>
-                    <li><a href="mobile.html">D</a></li>
+                    <li><a href="#">Customer Orders</a></li>
+                    <li><a href="#">Production Orders</a></li>
+                    <li><a href="#">Materials Request</a></li>
+                    <li><a href="#">Purchase Orders</a></li>
+                    <li><a href="#">Reports</a></li>
                 </ul>
         </div>
 
         <div class="col s11 blue lighten-5 full-height m-0 p-0">
             <nav class="blue darken-4">
                 <div>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="sass.html">Sass</a></li>
-                        <li><a href="badges.html">Components</a></li>
-                        <li><a href="collapsible.html">JavaScript</a></li>
+                    <ul id="nav-mobile" class="right hide-on-small-and-down">
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Stock</a></li>
+                        <li><a href="#">Production</a></li>
+                        <li><a href="#">Inventory</a></li>
+                        <li><a href="#">Log In</a></li>
+                        <li><a href="#">Log Out</a></li>
+                        <li><a href="#">Register User</a></li>
                     </ul>
                 </div>
             </nav>
-            {% block content %}
-            {% endblock %}
+            <div class="row m-0">
+                <div class="col center hide-on-small-and-down l3">
+                    <h5>Material Order</h5>
+                </div>
+                <div class="col center s12 l9">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
         </div>
     </div>
 

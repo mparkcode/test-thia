@@ -1,11 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-
+    <table class="centered highlight striped">
+        <thead>
+            <tr>
+                <th>Material ID</th>
+                <th>Material Description</th>
+                <th>Quantity</th>
+                <th>Each</th>
+            </tr>
+        </thead>
     {% for inventory in inventory %}
-        {{ inventory.material_id }}<br>
-        {{ inventory.material_description }}<br>
-        {{ inventory.material_qty }}<br>
-        {{ inventory.meterial_unit }}<br>
+        <tbody>
+            <tr>
+                <td>{{ inventory.material_id }}</td>
+                <td>{{ inventory.material_description }}</td>
+                <td>{{ inventory.material_qty }}</td>
+                <td>{{ inventory.meterial_unit }}</td>
+            </tr>
+        </tbody>
+    </table>
     {% endfor %}
-
 {% endblock %}

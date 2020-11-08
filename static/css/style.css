@@ -7,8 +7,21 @@ nav{
     box-shadow: none !important;
 }
 
+.vertical{
+    margin: auto !important;
+    padding-top: 5% !important;
+}
+
+.vertical ul li{
+    padding: 2rem 1rem;
+}
+
 .full-height {
   height: 100%;
+}
+
+.m-auto{
+    margin-left: auto !important;
 }
 
 .mb-0{
@@ -21,4 +34,10 @@ nav{
 
 .p-0{
     padding: 0 !important;
+}
+
+table{
+    border-collapse: collapse;
+    border: solid 1px  black;
+    margin-top: 5px;
 }
