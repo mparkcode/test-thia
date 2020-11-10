@@ -22,7 +22,9 @@ mongo = PyMongo(app)
 def register_material():
     inventory = mongo.db.inventory.find()
     if request.method == "POST":
+        matid = mongo.db.inventory.count()+1
         rgstmat = {
+            "material_id": "%04d" % (matid,),
             "material_description": request.form.get("material_description"),
             "material_unit": request.form.get("material_unit"),
             "material_cost": request.form.get("material_cost")
