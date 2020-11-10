@@ -41,3 +41,28 @@ table{
     border: solid 1px  black;
     margin-top: 5px;
 }
+
+.action-btn{
+    margin-top: 1%;
+    position: relative;
+    text-align: left;
+}
+
+.add-btn{
+    height: 40px;
+    width: 40px;
+}
+
+#rgst-mat {
+    max-width: 75% !important;
+} 
+
+.modal-content h4{
+    padding: 10px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.modal-content h6, .modal-content form{
+    padding-left: 10% !important;
+}

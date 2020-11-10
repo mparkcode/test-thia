@@ -15,9 +15,54 @@
                 <td>{{ inventory.material_id }}</td>
                 <td>{{ inventory.material_description }}</td>
                 <td>{{ inventory.material_qty }}</td>
-                <td>{{ inventory.meterial_unit }}</td>
+                <td>{{ inventory.material_unit }}</td>
             </tr>
         </tbody>
-    </table>
     {% endfor %}
+    </table>
+    <div class="action-btn">
+        <a class="waves-effect btn-floating add-btn btn-small green modal-trigger" href="#rgst-mat">
+            <i class="fas fa-plus"></i>
+        </a>
+    </div>
+
+    <div id="rgst-mat" class="modal modal-fixed-footer">
+        <div class="modal-content p-0">
+            <h4 class="blue darken-2">Register New Material</h4>
+            <h6 class="left">Material ID #</h6>
+             <div class="row m-0">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s11">
+                            <input placeholder="Material Description" id="material_description" name="material_description" type="text" class="validate" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s11">
+                            <select id="material_unit" name="material_unit" type="text" class="validate" required>
+                                <option value="" disabled selected>Material Each Unit</option>
+                                <option value="1">UN (Unit)</option>
+                                <option value="2">KG (Kilogram) </option>
+                                <option value="2">L (Litre) </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s11" required>
+                            <input placeholder="Material Unit" id="material_cost" name="material_cost" type="text" class="validate">
+                        </div>
+                    </div>
+                    <div class="row m-0">
+                        <div class="col s6 right">
+                            <a href="#!" class="modal-close waves-effect waves-red btn red">Cancel</a>
+                        </div>
+                        <div class="col s6 left">
+                            <button class="waves-effect waves-green btn green" type="submit" value="Submit">Confirm</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
