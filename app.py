@@ -18,27 +18,19 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-
-
 @app.route("/inventory", methods=["GET", "POST"])
-def get_inventory():
-    inventory = mongo.db.inventory.find()
-    return render_template("inventory.html", inventory=inventory)
-
-
-def register_task():
+def register_material():
     inventory = mongo.db.inventory.find()
     if request.method == "POST":
         rgstmat = {
             "material_description": request.form.get("material_description"),
             "material_unit": request.form.get("material_unit"),
-            "material_cost": request.form.get("material_cost"),
+            "material_cost": request.form.get("material_cost")
         }
         mongo.db.inventory.insert_one(rgstmat)
         flash("New Material registered")
-        return redirect(url_for("register_task"))
+        return redirect(url_for("register_material"))
     return render_template("inventory.html", inventory=inventory)
-
 
 
 if __name__ == "__main__":
