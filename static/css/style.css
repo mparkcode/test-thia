@@ -36,10 +36,41 @@ nav{
     padding: 0 !important;
 }
 
+.table-wrapper{
+    margin-top: 10vh;
+    height: 40vh;
+    position: relative !important;
+    overflow-y: auto;
+}
+
+th{
+    position: sticky !important;
+    top: 0;
+    margin-top: 0;
+    background:#eee;
+}
+
+tr, td{
+    padding: 5px;
+}
+
 table{
     border-collapse: collapse;
-    border: solid 1px  black;
-    margin-top: 5px;
+    table-layout: fixed;
+    margin-top: 0;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d47a1;
 }
 
 .action-btn{

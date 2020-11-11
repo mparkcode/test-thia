@@ -1,32 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-    <table class="centered highlight striped">
-        <thead>
-            <tr>
-                <th>Material ID</th>
-                <th>Material Description</th>
-                <th>Quantity</th>
-                <th>Each</th>
-            </tr>
-        </thead>
-    {% for inventory in inventory %}
-        <tbody>
-            <tr>
-                <td>{{ inventory.material_id }}</td>
-                <td>{{ inventory.material_description }}</td>
-                <td>{{ inventory.material_qty }}</td>
-                <td>{{ inventory.material_unit }}</td>
-            </tr>
-        </tbody>
-    {% endfor %}
-    </table>
+    <div class="table-wrapper">
+        <table class="centered">
+            <thead>
+                <tr>
+                    <th>Material ID</th>
+                    <th>Material Description</th>
+                    <th>Quantity</th>
+                    <th>Each</th>
+                </tr>
+            </thead>
+        {% for inventory in inventory %}
+            <tbody>
+                <tr>
+                    <td>{{ inventory.material_id }}</td>
+                    <td>{{ inventory.material_description }}</td>
+                    <td>{{ inventory.material_qty }}</td>
+                    <td>{{ inventory.material_unit }}</td>
+                </tr>
+            </tbody>
+        {% endfor %}
+        </table>
+    </div>
     <div class="action-btn">
         <a class="waves-effect btn-floating add-btn btn-small green modal-trigger" href="#rgst-mat">
             <i class="fas fa-plus"></i>
         </a>
     </div>
 
-    <div id="rgst-mat" class="modal modal-fixed-footer blue lighten-5">
+    <div id="rgst-mat" class="modal modal-fixed-footer grey lighten-4">
         <div class="modal-content p-0">
             <h4 class="blue darken-4">Register New Material</h4>
             <h6 class="left">Material ID #</h6>
