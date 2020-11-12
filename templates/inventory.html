@@ -13,10 +13,10 @@
         {% for inventory in inventory %}
             <tbody>
                 <tr>
-                    <td>{{ inventory.material_id }}</td>
-                    <td>{{ inventory.material_description }}</td>
-                    <td>{{ inventory.material_qty }}</td>
-                    <td>{{ inventory.material_unit }}</td>
+                    <td><a href="{{ url_for('delete_material', material_id=inventory._id) }}"><div>{{ inventory.material_id }}</div></a></td>
+                    <td><a href="{{ url_for('delete_material', material_id=inventory._id) }}"><div>{{ inventory.material_description }}</div></a></td>
+                    <td><a href="{{ url_for('delete_material', material_id=inventory._id) }}"><div>{{ inventory.material_qty }}</div></a></td>
+                    <td><a href="{{ url_for('delete_material', material_id=inventory._id) }}"><div>{{ inventory.material_unit }}</div></a></td>
                 </tr>
             </tbody>
         {% endfor %}

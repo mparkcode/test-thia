@@ -34,6 +34,12 @@ def register_material():
         return redirect(url_for("register_material"))
     return render_template("inventory.html", inventory=inventory)
 
+@app.route("/inventory/<material_id>")
+def delete_material(material_id):
+    mongo.db.inventory.remove(
+        {"_id": ObjectId(material_id)})
+    return redirect(url_for("register_material"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
