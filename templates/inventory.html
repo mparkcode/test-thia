@@ -5,7 +5,7 @@
             <ul class="tabs">
                 <li class="tab col s1"><a class="active" href="#inventory">Inventory</a></li>
                 <li class="tab col s1"><a href="#prodrequest">Production Requests</a></li>
-                <li class="tab col s1"><a href="#purchases">Purchases</a></li>
+                <li class="tab col s1"><a id="purchase" href="#purchases">Purchases</a></li>
                 <li class="tab col s1"><a href="#invreports">Reports</a></li>
                 <li class="tab col s1"><a class="modal-trigger" href="#rgst-mat">Register Materials</a></li>
             </ul>
@@ -33,22 +33,32 @@
             </tbody>
             <ul id="dropdown1" class="dropdown-content">
                 <li><a href="#!">Purchase Material</a></li>
-                <li><a href="{{ url_for('delete_material', material_id=inventory._id) }}">Delete Material</a></li>
+                <li><a class="modal-trigger" href="#confirmation">Delete Material</a></li>
             </ul>
+            <div id="confirmation" class="modal modal-fixed-footer grey lighten-5">
+                <div class="modal-content m-0 p-0">
+                    <h4 class="blue darken-4">Delete Material?</h4>
+                    <div class="row m-0"><h6><strong>{{ inventory.material_description }}</strong></h6></div>
+                    <div class="row m-0">
+                        <div class="col s6 right">
+                            <a class="modal-close waves-effect waves-red btn red">Cancel</a>
+                        </div>
+                        <div class="col s6 left">
+                            <a class="waves-effect waves-green btn green" href="{{ url_for('delete_material', material_id=inventory._id) }}">Confirm</a>
+                        </div> 
+                    </div>
+                </div>
+            </div>
         {% endfor %}
         </table>
     </div>
+    
     <div id="prodrequest">Produts Request</div>
     <div id="invreports"></div>
-    <div class="row" id="purchases">
-        <div class="col s12 m3">
-            <ul>
-                <li><div class="row btn blue darken-4">New Purchase</div></li>
-                <li><div class="row btn blue darken-4">Arrived Materials</div></li>
-            </ul>
+    <div class="row firstlane" style="border: solid black 1px; border-radius: 5px;" id="purchases">
+        <div class="col s12" style="border: solid red 1px;">
         </div>
     </div>
-
     <div id="rgst-mat" class="modal modal-fixed-footer grey lighten-5">
         <div class="modal-content p-0">
             <h4 class="blue darken-4">Register New Material</h4>
@@ -87,5 +97,9 @@
             </div>
         </div>
     </div>
+
+    
+    
+
 
 {% endblock %}

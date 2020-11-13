@@ -6,3 +6,7 @@ $(document).ready(function(){
     $('.dropdown-trigger').dropdown();
     $('.tabs').tabs();
   });
+
+  $('#purchase').click(function(){
+        $('#purchases').css("visibility", "visible");
+    })

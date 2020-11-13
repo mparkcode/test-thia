@@ -36,6 +36,15 @@ nav{
     padding: 0 !important;
 }
 
+.firstlane{
+    margin: 1% auto !important;
+    height: 15vh !important;
+}
+
+#purchases{
+    visibility: hidden;
+}
+
 .tabs .indicator{
     background-color: transparent;
 }
@@ -117,7 +126,7 @@ table{
     width: 40px;
 }
 
-#rgst-mat {
+#rgst-mat, #confirmation{
     max-width: 75% !important;
 } 
 
