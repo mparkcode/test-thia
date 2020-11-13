@@ -3,4 +3,6 @@ $(document).ready(function(){
     $('.fixed-action-btn').floatingActionButton();
     $('.modal').modal();
     $('select').formSelect();
+    $('.dropdown-trigger').dropdown();
+    $('.tabs').tabs();
   });

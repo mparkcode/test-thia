@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="table-wrapper">
+    <div class="row m-0">
+        <div class="col s12 p-0">
+            <ul class="tabs">
+                <li class="tab col s1"><a class="active" href="#inventory">Inventory</a></li>
+                <li class="tab col s1"><a href="#prodrequest">Production Requests</a></li>
+                <li class="tab col s1"><a href="#purchases">Purchases</a></li>
+                <li class="tab col s1"><a href="#invreports">Reports</a></li>
+                <li class="tab col s1"><a class="modal-trigger" href="#rgst-mat">Register Materials</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="table-wrapper" id="inventory">
         <table class="centered">
             <thead>
                 <tr>
@@ -13,22 +25,31 @@
         {% for inventory in inventory %}
             <tbody>
                 <tr>
-                    <td><a href="{{ url_for('delete_material', material_id=inventory._id) }}"><div>{{ inventory.material_id }}</div></a></td>
-                    <td><a href="{{ url_for('delete_material', material_id=inventory._id) }}"><div>{{ inventory.material_description }}</div></a></td>
-                    <td><a href="{{ url_for('delete_material', material_id=inventory._id) }}"><div>{{ inventory.material_qty }}</div></a></td>
-                    <td><a href="{{ url_for('delete_material', material_id=inventory._id) }}"><div>{{ inventory.material_unit }}</div></a></td>
+                    <td><a class="dropdown-trigger truncate" data-target="dropdown1" href="#"><div>{{ inventory._id }}</div></a></td>
+                    <td><a class="dropdown-trigger truncate" data-target="dropdown1" href="#"><div>{{ inventory.material_description }}</div></a></td>
+                    <td><a class="dropdown-trigger truncate" data-target="dropdown1" href="#"><div>{{ inventory.material_qty }}</div></a></td>
+                    <td><a class="dropdown-trigger truncate" data-target="dropdown1" href="#"><div>{{ inventory.material_unit }}</div></a></td>
                 </tr>
             </tbody>
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!">Purchase Material</a></li>
+                <li><a href="{{ url_for('delete_material', material_id=inventory._id) }}">Delete Material</a></li>
+            </ul>
         {% endfor %}
         </table>
     </div>
-    <div class="action-btn">
-        <a class="waves-effect btn-floating add-btn btn-small green modal-trigger" href="#rgst-mat">
-            <i class="fas fa-plus"></i>
-        </a>
+    <div id="prodrequest">Produts Request</div>
+    <div id="invreports"></div>
+    <div class="row" id="purchases">
+        <div class="col s12 m3">
+            <ul>
+                <li><div class="row btn blue darken-4">New Purchase</div></li>
+                <li><div class="row btn blue darken-4">Arrived Materials</div></li>
+            </ul>
+        </div>
     </div>
 
-    <div id="rgst-mat" class="modal modal-fixed-footer grey lighten-4">
+    <div id="rgst-mat" class="modal modal-fixed-footer grey lighten-5">
         <div class="modal-content p-0">
             <h4 class="blue darken-4">Register New Material</h4>
             <h6 class="left">Material ID #</h6>
@@ -56,7 +77,7 @@
                     </div>
                     <div class="row m-0">
                         <div class="col s6 right">
-                            <a href="#!" class="modal-close waves-effect waves-red btn red">Cancel</a>
+                            <a href="{{ url_for('register_material') }}" class="modal-close waves-effect waves-red btn red">Cancel</a>
                         </div>
                         <div class="col s6 left">
                             <button class="waves-effect waves-green btn green" type="submit">Confirm</button>

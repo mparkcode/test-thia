@@ -36,8 +36,24 @@ nav{
     padding: 0 !important;
 }
 
+.tabs .indicator{
+    background-color: transparent;
+}
+
+.tabs .tab{
+    color: black;
+    background-color: white;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: #eee;
+    outline: none;
+    border-color: black;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+}
+
 .table-wrapper{
-    margin-top: 10vh;
     max-height: 40vh;
     position: relative !important;
     overflow-y: auto;
@@ -57,11 +73,25 @@ tr, td{
 td a{
     color: black;
 }
+
 table{
     border-collapse: collapse;
     table-layout: fixed;
     margin-top: 0;
     width: 100%;
+}
+
+.dropdown-content li {
+    text-align: center;
+    margin:0;
+    padding: 2px;
+    min-height: 25px;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    font-size: 10px;
+    line-height: 10px;
+    padding: 2px 2px;
 }
 
 ::-webkit-scrollbar {
