@@ -12,8 +12,9 @@ nav{
     padding-top: 5% !important;
 }
 
-.vertical ul li{
-    padding: 2rem 1rem;
+ul li{
+    padding: 20px 2px;
+    font-size: 12px;
 }
 
 .full-height {
