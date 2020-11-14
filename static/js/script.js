@@ -5,8 +5,10 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.dropdown-trigger').dropdown();
     $('.tabs').tabs();
-  });
+    $('.collapsible').collapsible();
 
-  $('#purchase').click(function(){
+    $('#purchase').click(function(){
         $('#purchases').css("visibility", "visible");
     })
+
+  });

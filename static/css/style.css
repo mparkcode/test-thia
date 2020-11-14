@@ -9,14 +9,42 @@ nav{
 
 .vertical{
     margin: auto !important;
-    padding-top: 5% !important;
+    padding-top: 10% !important;
 }
 
 ul li{
-    padding: 20px 2px;
-    font-size: 12px;
+    padding: 105x 2px !important;
+    font-size: 12px;   
 }
 
+.collapsible {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin: .5rem 0 1rem 0;
+}
+
+.collapsible-header {
+    cursor: pointer;
+    line-height: 1.5;
+    padding: 265x 2px !important;
+    background-color: transparent !important;
+    border-bottom: transparent !important;
+}
+
+.collapsible-body {
+    display: none;
+    border-bottom: transparent !important;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px 2px !important;
+    font-size: 10px;
+    margin: .5rem 0 1rem 0;
+}
+
+.collapsible-body a{
+    color: white !important; 
+}
 .full-height {
   height: 100%;
 }
