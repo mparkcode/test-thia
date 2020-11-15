@@ -16,9 +16,9 @@ $(document).ready(function(){
         $('#mobilepanel-plus-inventory').css("visibility", "visible");
     })
 
-    $('#plus-inventory, #mobilepanel-plus-inventory').mouseleave(function(){
+    $('#mobilepanel-plus-inventory').mouseleave(function(){
         $('#mobilepanel-plus-inventory').css("visibility", "hidden");
-    },500)
+    })
 
 
   });
