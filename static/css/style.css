@@ -1,7 +1,6 @@
 html, body {
   height: 100%;
   margin: 0;
-  z-index: 1;
 }
 
 nav{
@@ -92,25 +91,18 @@ nav{
     padding-top: 2vh;
 }
 
-#mobilepanel-caret{
-    display: none;
-
-}
-
-#mobilepanel-search-inventory input, #mobilepanel-search-inventory i{
-    color: white;
-}
-
- #mobilepanel-search-inventory{
+#mobilepanel-search-inventory{
     display: none;
     padding-top: 1vh;
- }
-
-.mobilepanel-plus a{
-    color: white;
 }
 
+#mobilepanel-caret{
+    display: none;
+}
 
+#mobilepanel-search-inventory input, #mobilepanel-search-inventory i, .mobilepanel-plus a{
+    color: white;
+}
 
 .mobilepanel .s4{
     margin-top: 1.5vh;
