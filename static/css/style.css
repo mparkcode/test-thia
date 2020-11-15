@@ -21,6 +21,14 @@ nav{
     box-shadow: none !important;
 }
 
+.navpanel-mob{
+    margin: 0 !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    box-shadow: none !important;
+}
+
 .navheader{
     background-color: #1976d2  !important;
     border-bottom: none;
@@ -71,10 +79,32 @@ nav{
     background-color: #1976d2;
 }
 
+.mobilepanel-caret{
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    bottom: 8vh;
+    background-color: #1976d2;
+}
+
 #mobilepanel-plus-inventory{
     display: none;
     padding-top: 2vh;
 }
+
+#mobilepanel-caret{
+    display: none;
+
+}
+
+#mobilepanel-search-inventory input, #mobilepanel-search-inventory i{
+    color: white;
+}
+
+ #mobilepanel-search-inventory{
+    display: none;
+    padding-top: 1vh;
+ }
 
 .mobilepanel-plus a{
     color: white;
