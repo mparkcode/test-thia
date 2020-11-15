@@ -12,4 +12,13 @@ $(document).ready(function(){
         $('#purchases').css("visibility", "visible");
     })
 
+    $('#plus-inventory').mouseenter(function(){
+        $('#mobilepanel-plus-inventory').css("visibility", "visible");
+    })
+
+    $('#plus-inventory').mouseleave(function(){
+        $('#mobilepanel-plus-inventory').css("visibility", "hidden");
+    })
+
+
   });
