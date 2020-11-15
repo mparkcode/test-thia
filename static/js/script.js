@@ -12,11 +12,11 @@ $(document).ready(function(){
         $('#purchases').css("visibility", "visible");
     })
 
-    $('#plus-inventory, #mobilepanel-plus-inventory').mouseenter(function(){
+    $('#plus-inventory, #mobilepanel-plus-inventory').click(function(){
         $('#mobilepanel-plus-inventory').css("visibility", "visible");
     })
 
-    $('#mobilepanel-plus-inventory').click(function(){
+    $('body').click(function(){
         $('#mobilepanel-plus-inventory').css("visibility", "hidden");
     })
 
