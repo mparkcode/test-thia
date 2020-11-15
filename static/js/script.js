@@ -12,13 +12,12 @@ $(document).ready(function(){
         $('#purchases').css("visibility", "visible");
     })
 
-    $('#plus-inventory, #mobilepanel-plus-inventory').click(function(){
-        $('#mobilepanel-plus-inventory').css("visibility", "visible");
+    $('#plus-inventory').click(function(){
+        $('#mobilepanel-plus-inventory').toggle();
     })
 
-    $('body').click(function(){
-        $('#mobilepanel-plus-inventory').css("visibility", "hidden");
+    $('.contentrow, .tabrow, nav, #search-inventory, #caret-inventory').click(function(){
+        $('#mobilepanel-plus-inventory').css("display", "none");
     })
-
 
   });
