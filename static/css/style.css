@@ -1,6 +1,12 @@
-html, body {
+html {
   min-height: 100% !important;
-  margin: 0;
+  min-height: -webkit-fill-available;
+}
+
+
+body {
+  min-height: 100% !important;
+  min-height: -webkit-fill-available;
 }
 
 nav{
@@ -115,6 +121,7 @@ nav{
 
 .full-height {
   min-height: 100vh !important;
+  min-height: -webkit-fill-available;
 }
 
 .m-auto{
