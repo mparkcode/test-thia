@@ -1,5 +1,5 @@
 html, body {
-  min-height: 100%;
+  min-height: 100vh !important;
   margin: 0;
 }
 
@@ -114,7 +114,7 @@ nav{
 }
 
 .full-height {
-  height: 100%;
+  min-height: 100vh !important;
 }
 
 .m-auto{
