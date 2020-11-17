@@ -8,24 +8,31 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     $('.tooltipped').tooltip();
     
-    $('#purchase').click(function(){
-        $('#purchases').css("visibility", "visible");
+    
+    $('.navpanellayer').mouseenter(function(){
+        $(this).css("width","0");
+        $('.navpanel').css("width","200px","visibility","visible");
+    })
+
+    $('.navpanel').mouseleave(function(){
+        $(this).css("width","0","visibility","hidden");
+        $('.navpanellayer').css("width","10px");
     })
 
     $('#plus-inventory').click(function(){
-        $('#mobilepanel-plus-inventory').toggle();
+        $('#mobilepanel-plus-inventory').toggle('slow');
         $('#mobilepanel-caret').hide();
         $('#mobilepanel-search-inventory').hide();
     })
 
     $('#search-inventory').click(function(){
-        $('#mobilepanel-search-inventory').toggle();
+        $('#mobilepanel-search-inventory').toggle('slow');
         $('#mobilepanel-caret').hide();
         $('#mobilepanel-plus-inventory').hide();
     })
 
     $('.caret-up').click(function(){
-        $('#mobilepanel-caret').toggle();
+        $('#mobilepanel-caret').toggle('slow');
         $('#mobilepanel-plus-inventory').hide();
         $('#mobilepanel-search-inventory').hide();
     })

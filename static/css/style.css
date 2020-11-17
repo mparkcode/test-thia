@@ -11,15 +11,46 @@ body {
 
 nav{
     box-shadow: none !important;
+    background-color: #323264 !important;
 }
 
 .scrolly{
     overflow-y: auto !important;
 }
 
+
+.navpanellayer{
+    height: 100%;
+    width: 10px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    background-color: #323264;
+    transition: 1s;
+}
+
+.fa-chevron-right{
+    color: #f3f3f3 !important;
+    font-size: 16px !important;
+}
+
 .navpanel{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 1s;
+    background-color: #323264;
+}
+
+.navpanel ul {
     margin: 0 !important;
-    padding-top: 10vh !important;
+    padding-top: 20vh !important;
     border-top: none !important;
     border-right: none !important;
     border-left: none !important;
@@ -35,53 +66,59 @@ nav{
 }
 
 .navheader{
-    background-color: #1976d2  !important;
+    background-color: #323264  !important;
     border-bottom: none;
     padding-top: 20px;
 }
 
 .navheader a{
-    color: white !important;
+    color: #f3f3f3 !important;
 }
 
 .navlistwrapper{
-    border-bottom: solid white 0.5px !important;
-    border-top: solid white 0.5px !important;
+    border-bottom: solid #f3f3f3 0.5px !important;
+    border-top: solid #f3f3f3 0.5px !important;
 }
 
 .navlist{
     padding: 10px 2px 10px 14px !important;
     font-size: 10px !important;
     border: none !important;
-    background-color: #1976d2  !important;
+    background-color: #323264  !important;
 }
 
 .navheader:hover, .navlist:hover{
-    background-color: #176fc7 !important;
+    background-color: #323264 !important;
     cursor: pointer;
 }
 
 .navlist a{
-    color: white !important;
+    color: #f3f3f3 !important;
     padding: 0;
+}
+
+.content{
+    background-color: #f3f3f3;
 }
 
 .mobilepanel {
   overflow: hidden;
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 8vh;
-  background-color: #1976d2;
+  background-color: #323264;
 }
 
 .mobilepanel-plus{
     overflow: hidden;
     position: fixed;
     bottom: 8vh;
+    left: 0;
     width: 100%;
     height: 8vh;
-    background-color: #1976d2;
+    background-color: #323264;
 }
 
 .mobilepanel-caret{
@@ -89,17 +126,19 @@ nav{
     position: fixed;
     right: 0;
     bottom: 8vh;
-    background-color: #1976d2;
+    background-color: #323264;
 }
 
 #mobilepanel-plus-inventory{
     display: none;
     padding-top: 2vh;
+    left: 0;
 }
 
 #mobilepanel-search-inventory{
     display: none;
     padding-top: 1vh;
+    left: 0;
 }
 
 #mobilepanel-caret{
@@ -107,7 +146,7 @@ nav{
 }
 
 #mobilepanel-search-inventory input, #mobilepanel-search-inventory i, .mobilepanel-plus a{
-    color: white;
+    color: #f3f3f3;
 }
 
 .mobilepanel .s4{
@@ -115,12 +154,13 @@ nav{
 }
 
 .mobilepanel i{
-    color: white;
+    color: #f3f3f3;
     font-size: 1.6rem;
 }
 
 .full-height {
-  min-height: 100vh !important;
+    top:0 !important;
+    min-height: 100vh !important;
 }
 
 .m-auto{
@@ -142,9 +182,9 @@ nav{
 .tabrow{
     margin: 1% !important;
     height: 15vh !important;
-    border-bottom: outset 5px;
-    border-right: outset 5px;
-    border-color: #1976d2;
+    border-bottom: outset 2px;
+    border-right: outset 2px;
+    border-color: #323264;
 }
 
 .fa-search{
@@ -152,28 +192,7 @@ nav{
 }
 
 .fa-folder-plus, .fa-shopping-cart{
-    color: #1976d2;
-}
-
-#purchases{
-    visibility: visible;
-}
-
-.tabs .indicator{
-    background-color: transparent;
-}
-
-.tabs .tab{
-    color: black;
-    background-color: white;
-}
-
-.tabs .tab a:focus, .tabs .tab a:focus.active {
-    background-color: #eee;
-    outline: none;
-    border-color: black;
-    border-top-left-radius: 10%;
-    border-top-right-radius: 10%;
+    color: #323264;
 }
 
 .contentrow{
@@ -181,14 +200,17 @@ nav{
     max-height: 60vh;
     position: relative !important;
     overflow-y: auto;
+    border-bottom: outset 2px;
+    border-right: outset 2px;
+    border-color: #323264;
 }
 
 th{
     position: sticky !important;
     top: 0;
     margin-top: 0;
-    background:#1976d2 ;
-    color: white;
+    background:#323264 ;
+    color: #f3f3f3;
     border-radius: 0;
 }
 
@@ -229,7 +251,7 @@ table{
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1976d2;
+  background: #323264;
 }
 
 .action-btn{
@@ -249,7 +271,7 @@ table{
 
 .modal-content h4{
     padding: 10px;
-    color: white;
+    color: #f3f3f3;
     margin-bottom: 20px;
 }
 
