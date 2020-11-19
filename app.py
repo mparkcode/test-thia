@@ -21,6 +21,10 @@ mongo = PyMongo(app)
 @app.route("/inventory", methods=["GET", "POST"])
 def register_material():
     inventory = mongo.db.inventory.find()
+    puorders = mongo.db.puorders.find()
+    supplier = mongo.db.suppliers.find()
+    myquery = {"material_description": "Blue Cap"}
+    mydoc = mongo.db.inventory.find(myquery)
     if request.method == "POST":
         matid = mongo.db.inventory.count()+1
         rgstmat = {
@@ -32,7 +36,10 @@ def register_material():
         mongo.db.inventory.insert_one(rgstmat)
         flash("New Material registered")
         return redirect(url_for("register_material"))
-    return render_template("inventory.html", inventory=inventory)
+    return render_template(
+        "inventory.html",
+        pi=zip(puorders, inventory, supplier, mydoc))
+
 
 @app.route("/inventory/<material_id>")
 def delete_material(material_id):

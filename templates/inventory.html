@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="row tabrow valign-wrapper">
-        <div class="col s12 m4">
-            <h3 class="left-align">Inventory</h3>
+        <div class="col s12 m5 l4">
+            <h4 class="left-align">Inventory list</h4>
         </div>
-        <div class="col s4 left-align hide-on-small-and-down">
-            <div class="col s6">
+        <div class="col m5 l4 left-align hide-on-small-and-down">
+            <div class="col s4">
                 <a class="modal-trigger tooltipped" data-position="top" data-tooltip="Register Material" href="#rgst-mat">
-                    <h2 class="fas fa-folder-plus"></h2>
+                    <i class="fas fa-folder-plus"></i>
                 </a>
             </div>
-            <div class="col s6">
+            <div class="col s4">
                 <a class="modal-trigger tooltipped" data-position="top" data-tooltip="Purchase Materials">
-                    <h2 class="fas fa-shopping-cart"></h2>
+                    <i class="fas fa-shopping-cart"></i>
                 </a>
             </div>
         </div>
-        <div class="col s4 hide-on-small-and-down">
+        <div class="col m5 l4 hide-on-small-and-down">
             <form>
                 <div class="row">
                     <div class="col s12 valign-wrapper">
@@ -32,40 +32,27 @@
         </div>
     </div>
     
-    <div class="contentrow" id="inventory">
+    <div class="contentrow">
         <table class="centered">
             <thead>
                 <tr>
-                    <th>Material ID</th>
-                    <th>Material Description</th>
-                    <th>Quantity</th>
-                    <th>Each</th>
+                    <th>Order #</th>
+                    <th>Supplier</th>
+                    <th>Date of Request</th>
+                    <th>Total</th>
+                    <th>Status</th>
                 </tr>
             </thead>
-        {% for inventory in inventory %}
+        {% for pi in pi %}
             <tbody>
                 <tr>
-                    <td><a class="truncate"><div>{{ inventory._id }}</div></a></td>
-                    <td><a class="truncate"><div>{{ inventory.material_description }}</div></a></td>
-                    <td><a class="truncate"><div>{{ inventory.material_qty }}</div></a></td>
-                    <td><a class="truncate"><div>{{ inventory.material_unit }}</div></a></td>
+                    <td><a class="truncate"><div>{{ pi[0].puo_number }}</div></a></td>
+                    <td><a class="truncate"><div>{{ pi[2].supplier_name }}</div></a></td>
+                    <td><a class="truncate"><div>{{ pi[0].puo_date }}</div></a></td>
+                    <td><a ><div>{{ pi[3].material_cost}}</div></a></td>
+                    <td><a class="truncate"><div>{{ pi[1].material_description }}</div></a></td>
                 </tr>
             </tbody>
- 
-            <div id="confirmation" class="modal modal-fixed-footer grey lighten-5">
-                <div class="modal-content m-0 p-0">
-                    <h4 class="blue darken-4">Delete Material?</h4>
-                    <div class="row m-0"><h6><strong>{{ inventory.material_description }}</strong></h6></div>
-                    <div class="row m-0">
-                        <div class="col s6 right">
-                            <a class="modal-close waves-effect waves-red btn red">Cancel</a>
-                        </div>
-                        <div class="col s6 left">
-                            <a class="waves-effect waves-green btn green" href="{{ url_for('delete_material', material_id=inventory._id) }}">Confirm</a>
-                        </div> 
-                    </div>
-                </div>
-            </div>
         {% endfor %}
         </table>
     </div>

@@ -192,7 +192,9 @@ nav{
 }
 
 .fa-folder-plus, .fa-shopping-cart{
+    font-size: 300%;
     color: #323264;
+    bottom:0 !important;
 }
 
 .contentrow{
