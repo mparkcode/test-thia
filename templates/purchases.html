@@ -33,7 +33,7 @@
     </div>
     
     <div class="contentrow">
-        <table class="centered">
+        <!--<table class="centered">
             <thead>
                 <tr>
                     <th>Order #</th>
@@ -42,18 +42,18 @@
                     <th>Total</th>
                     <th>Status</th>
                 </tr>
-            </thead>
-        {% for inventory in inventory %}
-            <tbody>
-                <tr>
-                    <td>{{ inventory.material_id }}</td>
-                    <td>{{ inventory.material_description }}</td>
-                    <td>{{ inventory.material_qty }}</td>
-                    <td>{{ inventory.material_unit }}</td>
-                </tr>
-            </tbody>
+            </thead>-->
+        
+        {% for k in puorders %}
+            {% for j in k.puo_items.puo_item_name %}
+                {% for l in inventory %}  
+                    {% if j == l.material_description %}
+                        <div>{{ j }}  {{ l.material_cost }}</div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
         {% endfor %}
-        </table>
+        <!--</table>-->
     </div>
     
     <div id="rgst-mat" class="modal modal-fixed-footer grey lighten-5">
