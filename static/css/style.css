@@ -199,6 +199,7 @@ nav{
 
 .contentrow{
     margin: 1% !important;
+    min-height: 60vh;
     max-height: 60vh;
     position: relative !important;
     overflow-y: auto;
@@ -231,18 +232,6 @@ table{
     width: 100%;
 }
 
-.dropdown-content li {
-    text-align: center;
-    margin:0;
-    padding: 2px;
-    min-height: 25px;
-}
-
-.dropdown-content li>a, .dropdown-content li>span {
-    font-size: 10px;
-    line-height: 10px;
-    padding: 2px 2px;
-}
 
 ::-webkit-scrollbar {
   width: 5px;

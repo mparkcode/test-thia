@@ -50,6 +50,16 @@ def purchases():
         "purchases.html",
         puorders=puorders, inventory=inventory)
 
+@app.route("/new_purchase")
+def new_purchase():
+    puorders = mongo.db.puorders.find()
+    inventory = mongo.db.inventory.find()
+    return render_template(
+        "new_purchase.html",
+        puorders=puorders, inventory=inventory)
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),

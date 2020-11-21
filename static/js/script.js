@@ -45,8 +45,16 @@ $(document).ready(function(){
         $('#mobilepanel-search-inventory').css("display", "none");
     })
 
-     $('.contentrow, .tabrow, nav, #plus-inventory, #mobilepanel-search-inventory ,#mobilepanel-plus-inventory').click(function(){
+    $('.contentrow, .tabrow, nav, #plus-inventory, #mobilepanel-search-inventory ,#mobilepanel-plus-inventory').click(function(){
         $('#mobilepanel-caret').css("display", "none");
+    })
+
+    var new_items = [[],[],[],[]]
+
+    $('#add_purchase_item').click(function(){
+        new_items[0] = $(this).parent().find("#puo_item_name").val();
+        new_items[1] = $(this).parent().find("#puo_item_qty").val();
+        $('#new_purchase_items').append(`<li>${new_items[0]}    ${new_items[1]}</li>`);
     })
 
   });

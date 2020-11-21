@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row tabrow valign-wrapper">
+        <div class="col s12">
+            <h4 class="left-align">New Purchase</h4>
+        </div>
+        
+    </div>
+    
+    <div class="contentrow">
+        <div class="row left-align valign-wrapper m-0">
+            <div class="input-field col s4 m-0">
+                <select id="puo_item_name" name="puo_item_name" type="text" class="validate" required>
+                    <option value="" disabled selected>Select New Item</option>
+                    {% for inventory in inventory %}
+                        <option value="{{ inventory.material_description }} {{ inventory.material_cost }}">{{ inventory.material_description }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="input-field col s4 m-0">
+                <input placeholder="Quantity" id="puo_item_qty" name="puo_item_qty" type="text" class="validate" required>
+            </div>
+            <button id="add_purchase_item" class="s1 waves-effect waves-green btn-small green m-0">Add</button>
+        </div>
+        <div class="col s4 left">
+            <ol id="new_purchase_items" class="left">
+            </ol> 
+        </div>
+    </div>
+    
+
+    <div class="row mobilepanel-plus hide-on-med-and-up valign-wrapper m-0 center" id="mobilepanel-plus-inventory">
+        <div class="col s12">
+            <div class="col s6"><a class="modal-trigger" href="#rgst-mat">New Material</a></div>
+            <div class="col s6"><a href="#">Purchase</a></div>
+        </div>
+    </div>
+
+    <div class="row mobilepanel-plus hide-on-med-and-up valign-wrapper m-0 center" id="mobilepanel-search-inventory">
+        <form>
+            <div class="row">
+                <div class="col s12 valign-wrapper">
+                    <div class="col s10">
+                        <input type="text" placeholder="Search Material">
+                    </div>
+                    <div class="col s2 left-align">
+                        <a href="#"><i class="fas fa-search"></i></a>
+                    </div>
+                </div>
+            </div>                
+        </form>
+    </div>
+
+    <div class="row mobilepanel hide-on-med-and-up valign-wrapper m-0 p-0 center">
+        <div class="col s12">
+            <div class="col s4" id="plus-inventory"><a><i class="fas fa-plus"></i></a></div>
+            <div class="col s4" id="search-inventory"><a href="#"><i class="fas fa-search"></i></a></div>
+            <div class="col s4 caret-up"><a href="#"><i class="fas fa-caret-up"></i></a></div>
+        </div>
+        
+    </div>
+
+{% endblock %}
