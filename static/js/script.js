@@ -53,6 +53,8 @@ $(document).ready(function(){
     var new_item_name = []
     var new_item_qty = []
     var new_item_cost = []
+    var new_item_id = []
+
 
     $('#add_purchase_item').click(function(){
         new_items[0] = $(this).parent().find("#puo_item_name").val().split(",");
@@ -61,11 +63,23 @@ $(document).ready(function(){
         new_item_name.push(new_items[0][0]);
         new_item_cost.push(new_items[0][1]);
         new_item_qty.push(new_items[1]);
+        new_item_id.push(new_item_name.length-1)
+        
 
         $('#new_purchase_items').val(new_item_name);
         $('#new_purchase_cost').val(new_item_cost);
         $('#new_purchase_qty').val(new_item_qty);
-        $('#items_list').append(`<li class="s12"> ${new_items[0][0]}, ${new_items[0][1]}, ${new_items[1]} <button>Edit</button><button class="delete_list_item">Delete</button></div></li>`);  
+        $('#new_purchase_id').val(new_item_id);
+
+        
+        $('#items_list').append(`<li class="s12" id=${new_item_name.length-1}> ${new_item_name.length}-- ${new_items[0][0]}, ${new_items[0][1]}, ${new_items[1]} <button>Edit</button><button class="delete_item">Delete</button></div></li>`);  
+        $('.delete_item').click(function(){
+            index = Number($(this).parent().attr("id"));
+            new_item_name.splice(index,1);
+            $('#new_purchase_items').val(new_item_name); 
+            //$(this).text(new_item_name[index-1]);
+            $(this).text(index);
+        })
     })
 
     
