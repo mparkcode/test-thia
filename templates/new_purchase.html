@@ -13,7 +13,7 @@
                 <select id="puo_item_name" name="puo_item_name" type="text" class="validate" required>
                     <option value="" disabled selected>Select New Item</option>
                     {% for inventory in inventory %}
-                        <option value="{{ inventory.material_description }} {{ inventory.material_cost }}">{{ inventory.material_description }}</option>
+                        <option value="{{ inventory.material_description }},{{ inventory.material_cost }}">{{ inventory.material_description }}</option>
                     {% endfor %}
                 </select>
             </div>
@@ -22,9 +22,18 @@
             </div>
             <button id="add_purchase_item" class="s1 waves-effect waves-green btn-small green m-0">Add</button>
         </div>
-        <div class="col s4 left">
-            <ol id="new_purchase_items" class="left">
-            </ol> 
+        <div class="row m-0">
+            <div class="col s4 left">
+                <input id="new_purchase_items" class="left" name="new_purchase_items" type="text" required>
+                <input id="new_purchase_cost" class="left" name="new_purchase_cost" type="text" required>
+                <input id="new_purchase_qty" class="left" name="new_purchase_qty" type="text" required>
+            </div>
+        </div>
+        <div class="row m-0">
+            <div class="col s8">
+                <ol class="s12 left" id="items_list">
+                </ol>
+            </div>
         </div>
     </div>
     
