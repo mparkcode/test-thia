@@ -72,15 +72,12 @@ $(document).ready(function(){
         $('#new_purchase_id').val(new_item_id);
 
         
-        $('#items_list').append(`<li class="s12" id=${new_item_name.length-1}> ${new_item_name.length}-- ${new_items[0][0]}, ${new_items[0][1]}, ${new_items[1]} <button>Edit</button><button class="delete_item">Delete</button></div></li>`);  
+        $('#items_list').append(`<li class="s12" id=${new_item_name.length-1}> ${new_item_name.length}-- ${new_items[0][0]}, ${new_items[0][1]}, ${new_items[1]} <button class="waves-effect waves-light btn modal-trigger" href="#edit_purchase_item_card">Edit</button><button class="delete_item">Delete</button></div></li>`);  
         $('.delete_item').click(function(){
             index = Number($(this).parent().attr("id"));
-            new_item_name.splice(index,1);
-            $('#new_purchase_items').val(new_item_name); 
-            //$(this).text(new_item_name[index-1]);
+            new_item_name.splice(index, 1);
+            $('#new_purchase_items').val(new_item_name)
             $(this).text(index);
         })
     })
-
-    
   });
