@@ -59,6 +59,23 @@ def new_purchase():
         puorders=puorders, inventory=inventory)
 
 
+@app.route("/new_purchase_copy")
+def new_purchase_copy():
+    puorders = mongo.db.puorders.find()
+    inventory = mongo.db.inventory.find()
+    suppliers = mongo.db.suppliers.find()
+    sp = []
+    psindex = []
+    index = 0
+    for j in suppliers:
+        sp.append(j["supplier_products"])
+        psindex(index)
+        index += 1
+    return render_template(
+        "new_purchase_copy.html",
+        puorders=puorders, inventory=inventory, 
+        i = zip(sp,index)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

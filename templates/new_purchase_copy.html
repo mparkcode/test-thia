@@ -8,20 +8,17 @@
     </div>
     
     <div class="contentrow">
-        <div class="row left-align valign-wrapper m-0">
-            <div class="input-field col s4 m-0">
-                <select id="puo_item_name" name="puo_item_name" type="text" class="validate" required>
-                    <option value="" disabled selected>Select New Item</option>
-                    {% for inventory in inventory %}
-                        <option value="{{ inventory.material_description }},{{ inventory.material_cost }}">{{ inventory.material_description }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="input-field col s4 m-0">
-                <input placeholder="Quantity" id="puo_item_qty" name="puo_item_qty" type="text" class="validate" required>
-            </div>
-            <button id="add_purchase_item" class="s1 waves-effect waves-green btn-small green m-0">Add</button>
-        </div>
+    
+        {% for inventory in inventory %}
+            <div>{{inventory.material_description}}</div>
+        {% endfor %}
+
+        {% for i in i %}
+            {% if i[1] == 0 %}
+                <div>{{i[0]}}</div>
+            {% endif %}
+        {% endfor %}
+            
         <div class="row m-0">
             <div class="col s4 left">
                 <input id="new_purchase_items" class="left" name="new_purchase_items" type="text" required>
